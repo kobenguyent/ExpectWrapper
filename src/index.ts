@@ -1,4 +1,4 @@
-import expect = require('expect');
+import expect from 'expect';
 
 const ExpectWrapper = {
   async assertEqual(a: any, b: any): Promise<any> {
@@ -22,11 +22,11 @@ const ExpectWrapper = {
   },
 
   async assertToBeTrue(a: any): Promise<any> {
-    return expect(a).toBeTruthy;
+    return expect(a).toBeTruthy();
   },
 
   async assertToBeFalse(a: any): Promise<any> {
-    return expect(a).toBeFalsy;
+    return expect(a).toBeFalsy();
   },
 
   async assertNotContain(a: any, b: any): Promise<any> {
