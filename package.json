@@ -4,11 +4,11 @@
   "main": "dist/index.js",
   "description": "An expect wrapper to be used with codeceptjs",
   "scripts": {
-    "lint": "rome check src/index.ts",
-    "lint:fix": "rome check src/index.ts --apply-suggested",
+    "lint": "rome check src",
+    "lint:fix": "rome check src --apply-suggested",
     "prepare": "husky install",
-    "code:format": "rome format src/index.ts --write",
-    "tsc": "tsc src/**"
+    "code:format": "rome format src --write",
+    "tsc": "tsc"
   },
   "keywords": [
     "codeceptjs-expectwrapper",
@@ -35,13 +35,13 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kobenuyent/ExpectWrapper.git"
+    "url": "git+https://github.com/kobenguyent/ExpectWrapper.git"
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kobenuyent/ExpectWrapper/issues"
+    "url": "https://github.com/kobenguyent/ExpectWrapper/issues"
   },
-  "homepage": "https://github.com/kobenuyent/ExpectWrapper#readme",
+  "homepage": "https://github.com/kobenguyent/ExpectWrapper#readme",
   "lint-staged": {
     "src": "rome format src --write"
   }
