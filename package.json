@@ -2,13 +2,12 @@
   "name": "codeceptjs-expectwrapper",
   "version": "1.0.3",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
   "description": "An expect wrapper to be used with codeceptjs",
   "scripts": {
-    "lint": "rome check src",
-    "lint:fix": "rome check src --apply-suggested",
+    "lint": "rome check src/index.ts",
+    "lint:fix": "rome check src/index.ts --apply-suggested",
     "prepare": "husky install",
-    "code:format": "rome format src --write",
+    "code:format": "rome format src/index.ts --write",
     "tsc": "tsc"
   },
   "keywords": [
