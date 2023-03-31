@@ -13,14 +13,14 @@ jobs:
   publish-npm:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org/
       - run: npm i
       - run: npm run lint
-      - run: npx tsc src/**
+      - run: npx tsc
       - run: npx semantic-release
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
