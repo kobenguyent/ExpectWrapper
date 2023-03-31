@@ -1,39 +1,29 @@
 # Introduction
 
 This is an expect-wrapper that you can use with CodeceptJS.
-This is done using CodeceptJS <https://codecept.io/>
 
 # Installation
 
-This requires [Node.js](https://nodejs.org/) v8+ to run.
+This requires [Node.js](https://nodejs.org/) v16+ to run.
+NPM package: https://www.npmjs.com/package/codeceptjs-expectwrapper
 
 ```sh
 cd codeceptjs-project
 npm i codeceptjs-expectwrapper
 ```
 
-# How to use
-Open your `step_file.ts`
+### Configuration
 
-```
-const { actor } = require('codeceptjs');
-const faker = require('faker');
-import ex from 'codeceptjs-expectwrapper'; // import it here
+This helper should be added in `codecept.conf.ts/codecept.conf.js`
 
-export = function () {
-    return actor({
-        async createNewUser(userData:object) {
-            let payload = userData || {
-                name: faker.name.firstName(),
-                job: 'leader'
-            };
+Example:
 
-            return this.sendPostRequest('/api/users', payload);
+```json
+{
+    "helpers": {
+        "Expectwrapper": {
+            "require": "codeceptjs-expectwrapper"
         }
-    , ...ex}); // add it to actor object so that it can be used and showed when typing I (auto complete for actor I).
+    }
 }
 ```
-
-Here is the image showing how it is in action:
-
-![auto complete for I actor](./img/auto-complete.png)

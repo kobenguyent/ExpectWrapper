@@ -1,5 +1,8 @@
 node_modules
-/lib
+dist
 tsconfig.json
 tslint.json
-.prettierrc
+.idea
+.DS_store
+img
+package-lock.json

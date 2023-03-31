@@ -1,37 +1,85 @@
-import expect from 'expect';
+import expect from "expect";
 
-const ExpectWrapper = {
-  async assertEqual(a: any, b: any): Promise<any> {
-    return expect(a).toEqual(b);
-  },
+class ExpectWrapper {
+	/**
+	 * @param {*} actualValue
+	 * @param {*} expectedValue
+	 * @returns {*}
+	 */
+	async expectEqual(actualValue: any, expectedValue: any): Promise<any> {
+		return expect(actualValue).toEqual(expectedValue);
+	}
 
-  async assertNotEqual(a: any, b: any): Promise<any> {
-    return expect(a).not.toEqual(b);
-  },
+	/**
+	 * @param {*} actualValue
+	 * @param {*} expectedValue
+	 * @returns {*}
+	 */
+	async expectNotEqual(actualValue: any, expectedValue: any): Promise<any> {
+		return expect(actualValue).not.toEqual(expectedValue);
+	}
 
-  async assertContain(a: any, b: any): Promise<any> {
-    return expect(a).toContain(b);
-  },
+	/**
+	 * @param {*} actualValue
+	 * @param {*} expectedValue
+	 * @returns {*}
+	 */
+	async expectContain(actualValue: any, expectedValue: any): Promise<any> {
+		return expect(actualValue).toContain(expectedValue);
+	}
 
-  async assertGreaterThan(a: any, b: any): Promise<any> {
-    return expect(a).toBeGreaterThan(b);
-  },
+	/**
+	 * @param {*} actualValue
+	 * @param {*} expectedValue
+	 * @returns {*}
+	 */
+	async expectGreaterThan(actualValue: any, expectedValue: any): Promise<any> {
+		return expect(actualValue).toBeGreaterThan(expectedValue);
+	}
 
-  async assertNotEmpty(a: any): Promise<any> {
-    return expect(a).not.toEqual('');
-  },
+	/**
+	 * @param {*} a
+	 * @returns {*}
+	 */
+	async expectNotEmpty(a: any): Promise<any> {
+		return expect(a).not.toEqual("");
+	}
 
-  async assertToBeTrue(a: any): Promise<any> {
-    return expect(a).toBeTruthy();
-  },
+	/**
+	 * @param {*} a
+	 * @returns {*}
+	 */
+	async expectToBeTrue(a: any): Promise<any> {
+		return expect(a).toBeTruthy();
+	}
 
-  async assertToBeFalse(a: any): Promise<any> {
-    return expect(a).toBeFalsy();
-  },
+	/**
+	 * @param {*} a
+	 * @returns {*}
+	 */
+	async expectToBeFalse(a: any): Promise<any> {
+		return expect(a).toBeFalsy();
+	}
 
-  async assertNotContain(a: any, b: any): Promise<any> {
-    return expect(a).not.toContain(b);
-  },
-};
+	/**
+	 * @param {*} actualValue
+	 * @param {*} expectedValue
+	 * @returns {*}
+	 */
+	async expectNotContain(actualValue: any, expectedValue: any): Promise<any> {
+		return expect(actualValue).not.toContain(expectedValue);
+	}
 
-export default ExpectWrapper;
+  /**
+   * Expect object to have property with expected value if passed
+   * @param {*} object
+   * @param {*} property
+   * @param {*} [value]
+   * @returns {*}
+   */
+	async expectToHaveProperty(object: any, property: any, value?: any): Promise<any> {
+	  return expect(object).toHaveProperty(property, value)
+    }
+}
+
+export = ExpectWrapper;
