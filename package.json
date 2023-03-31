@@ -9,7 +9,7 @@
     "lint:fix": "rome check src --apply-suggested",
     "prepare": "husky install",
     "code:format": "rome format src --write",
-    "tsc": "tsc -d"
+    "tsc": "tsc"
   },
   "keywords": [
     "codeceptjs-expectwrapper",
